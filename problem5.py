@@ -1,12 +1,12 @@
+import time
 
-remainder = 1
-number = 0
+start_time = time.time()
 
-while remainder != 0:
-    number += 1
-    for i in range(1,21):
-        remainder = number % i
-        if remainder != 0:
-            break
+list_divider = [11, 13, 14, 16, 17, 18, 19, 20]
+
+for number in range(20, 99999999999999, 20):
+    if all(number % i == 0 for i in list_divider):
+        break
 
 print(number)
+print(f"Elapsed time: {time.time() - start_time}")
